@@ -33,6 +33,5 @@ public class WikipediaSearchScreen {
         menuButton.click();
         nameAccount.shouldHave(text("Log in to Wikipedia"));
         nameAccount.click();
-
     }
 }
