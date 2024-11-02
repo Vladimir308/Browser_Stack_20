@@ -12,8 +12,8 @@ public class WikipediaSearchScreen {
 
     private final SelenideElement searchCard = $(accessibilityId("Search Wikipedia"));
     private final SelenideElement searchBar = $(id("org.wikipedia.alpha:id/search_src_text"));
-    private final SelenideElement menuButton = $(accessibilityId("org.wikipedia.alpha:id/menu_overflow_button"));
-    private final SelenideElement nameAccount = $(accessibilityId("org.wikipedia.alpha:id/explore_overflow_account_name"));
+    private final SelenideElement menuButton = $(id("org.wikipedia.alpha:id/menu_overflow_button"));
+    private final SelenideElement nameAccount = $(id("org.wikipedia.alpha:id/explore_overflow_account_name"));
 
     @Step("Perform search")
     public void searchFor(String query) {
