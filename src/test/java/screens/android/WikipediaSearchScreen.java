@@ -31,6 +31,8 @@ public class WikipediaSearchScreen {
     @Step("Perform search")
     public void loginButton() {
         menuButton.click();
-        nameAccount.shouldHave(text("Log in to Wikipedia")).click();
+        nameAccount.shouldHave(text("Log in to Wikipedia"));
+        nameAccount.click();
+
     }
 }
