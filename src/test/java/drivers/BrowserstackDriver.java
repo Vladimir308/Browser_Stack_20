@@ -3,6 +3,7 @@ package drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserstackAuthConfig;
 import config.LocalConfig;
+import lombok.Getter;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -15,6 +16,8 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
+
+    @Getter
     public static BrowserstackAuthConfig authConfig = ConfigFactory.create(BrowserstackAuthConfig.class, System.getProperties());
     public static LocalConfig deviceConfig = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
