@@ -14,7 +14,7 @@ public interface BrowserstackAuthConfig extends Config {
     @Key("key")
     String getKey();
 
-    @Key("remoteUrl")
+    @Key("remoteWebDriverUrl")
     @DefaultValue("https://hub.browserstack.com/wd/hub")
-    String getRemoteUrl();
+    String getRemoteWebDriverUrl();
 }
