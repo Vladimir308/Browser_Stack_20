@@ -11,7 +11,7 @@ import static screens.android.WikipediaSearchScreen.*;
 public class OnboardingScreenTest extends TestBase {
 
     @Test
-    @Tag("emulation")
+    @Tag("emulator")
     @DisplayName("Проверка стартовых страниц Wikipedia")
     void onboardingScreenTest() {
         String firstText = "The Free Encyclopedia\n…in over 300 languages",

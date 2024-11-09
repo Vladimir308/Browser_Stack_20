@@ -9,8 +9,9 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("android")
+@Tag("browserstack")
 public class WikipediaTests extends TestBase {
+
     WikipediaSearchScreen searchScreen = new WikipediaSearchScreen();
     WikipediaSearchResultsScreen searchResultsScreen = new WikipediaSearchResultsScreen();
 

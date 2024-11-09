@@ -1,18 +1,21 @@
 plugins {
     id 'java-library'
-    id "io.qameta.allure" version "2.9.6"
+    id 'io.qameta.allure' version '2.11.2'
+    id "io.freefair.lombok" version "8.10.2"
 }
 
 repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.17.3",
-    selenideVersion = "6.5.2",
-    appiumVersion = "8.0.0",
-    restAssured = "4.5.1",
+def aspectjWeaverVersion = "1.9.22",
+    selenideVersion = "6.13.0",
+    restAssuredVersion = "5.3.0",
+    allureVersion = "2.21.0",
     junitVersion = "5.10.0",
-    slf4jVersion = "1.7.32"
+    slf4jVersion = "2.0.7",
+    appiumVersion = "8.3.0",
+    ownerVersion = "1.0.4"
 
 allure {
     report {
@@ -20,6 +23,7 @@ allure {
     }
     adapter {
         aspectjWeaver.set(true)
+        aspectjVersion.set(aspectjWeaverVersion)
         frameworks {
             junit5 {
                 adapterVersion.set(allureVersion)
@@ -30,26 +34,22 @@ allure {
 
 dependencies {
     testImplementation(
+            "org.aspectj:aspectjweaver:$aspectjWeaverVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.appium:java-client:$appiumVersion",
-            "io.rest-assured:rest-assured:$restAssured",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
             'org.assertj:assertj-core:3.26.3',
-            "commons-io:commons-io:2.11.0",
-            'org.aeonbits.owner:owner:1.0.4'
+            "commons-io:commons-io:2.11.0"
     )
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.10.0')
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-tasks.withType(Test) {
-    systemProperties(System.getProperties())
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -59,20 +59,14 @@ tasks.withType(Test) {
     }
 }
 
-task android_test(type: Test) {
+tasks.register('browserstack_tests', Test) {
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("browserstack")
     }
 }
 
-task ios_test(type: Test) {
+tasks.register('emulator_tests', Test) {
     useJUnitPlatform {
-        includeTags("ios")
-    }
-}
-
-task emulation_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("emulation")
+        includeTags("emulator")
     }
 }

@@ -2,7 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserstackAuthConfig;
-import config.DeviceConfig;
+import config.LocalConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -16,7 +16,7 @@ import java.net.URL;
 public class BrowserstackDriver implements WebDriverProvider {
 
     public static BrowserstackAuthConfig authConfig = ConfigFactory.create(BrowserstackAuthConfig.class, System.getProperties());
-    public static DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static LocalConfig deviceConfig = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -27,13 +27,16 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("browserstack.user", authConfig.getUserName());
         caps.setCapability("browserstack.key", authConfig.getKey());
 
-        caps.setCapability("app", deviceConfig.getApp());
-        caps.setCapability("device", deviceConfig.getDevice());
-        caps.setCapability("os_version", deviceConfig.getOsVersion());
 
-        caps.setCapability("project", authConfig.getProjectName());
-        caps.setCapability("build", authConfig.getBuildName());
-        caps.setCapability("name", "test " + deviceConfig.getDevice());
+        caps.setCapability("device", deviceConfig.getDeviceName());
+        caps.setCapability("os_version", deviceConfig.getPlatformVersion());
+        caps.setCapability("app", deviceConfig.getAppUrl());
+
+        caps.setCapability("project", "Wikipedia Mobile Tests Java Project");
+        caps.setCapability("build", "browserstack-build-1");
+        caps.setCapability("name", "wikipedia_tests");
+
+        caps.setCapability("fullReset", true);
 
         try {
             return new RemoteWebDriver(

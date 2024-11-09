@@ -8,7 +8,7 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("ios")
+@Tag("browserstack")
 public class SampleAppSearchTests extends TestBase {
 
     SampleAppSearchScreen searchScreen = new SampleAppSearchScreen();
