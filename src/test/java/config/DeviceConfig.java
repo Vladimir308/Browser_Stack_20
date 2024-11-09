@@ -3,25 +3,17 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${device}.properties"
+        "classpath:${env}.properties"
 })
+
 public interface DeviceConfig extends Config {
 
-    @Key("device.name")
-    String geyDeviceName();
+    @Key("device")
+    String getDevice();
 
-    @Key("platform.version")
-    String getPlatformVersion();
+    @Key("osVersion")
+    String getOsVersion();
 
-    @Key("appUrl")
-    String getAppUrl();
-
-    @Key("platformName")
-    String getPlatformName();
-
-    @Key("projectName")
-    String getProject();
-
-    @Key("buildName")
-    String getBuild();
+    @Key("app")
+    String getApp();
 }

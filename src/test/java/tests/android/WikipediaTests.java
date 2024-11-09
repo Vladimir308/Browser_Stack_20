@@ -1,10 +1,11 @@
-package tests;
+package tests.android;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.android.WikipediaSearchResultsScreen;
 import screens.android.WikipediaSearchScreen;
+import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

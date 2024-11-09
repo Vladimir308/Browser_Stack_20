@@ -10,26 +10,34 @@ import static io.appium.java_client.AppiumBy.*;
 
 public class WikipediaSearchScreen {
 
-    private final SelenideElement searchCard = $(accessibilityId("Search Wikipedia"));
-    private final SelenideElement searchBar = $(id("org.wikipedia.alpha:id/search_src_text"));
-    private final SelenideElement menuButton = $(id("org.wikipedia.alpha:id/menu_overflow_button"));
-    private final SelenideElement nameAccount = $(id("org.wikipedia.alpha:id/explore_overflow_account_name"));
+    public static final SelenideElement
+            textElement = $(id("org.wikipedia.alpha:id/primaryTextView")),
+            searchContainer = $(id("org.wikipedia.alpha:id/search_container")),
+            continueButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
+            searchCard = $(accessibilityId("Search Wikipedia")),
+            searchBar = $(id("org.wikipedia.alpha:id/search_src_text")),
+            menuButton = $(id("org.wikipedia.alpha:id/menu_overflow_button")),
+            nameAccount = $(id("org.wikipedia.alpha:id/explore_overflow_account_name"));
+
+    public static void clickContinueButton() {
+        continueButton.click();
+    }
 
     @Step("Perform search")
-    public void searchFor(String query) {
+    public static void searchFor(String query) {
         searchCard.click();
         searchBar.sendKeys(query);
     }
 
     @Step("Perform search")
-    public void searchForUnsuccessful(String query) {
+    public static void searchForUnsuccessful(String query) {
         searchCard.click();
         searchBar.sendKeys(query);
         $$(id("org.wikipedia.alpha:id/page_list_item_container")).first().click();
     }
 
     @Step("Perform search")
-    public void loginButton() {
+    public static void loginButton() {
         menuButton.click();
         nameAccount.shouldHave(text("Log in to Wikipedia"));
         nameAccount.click();

@@ -1,9 +1,10 @@
-package tests;
+package tests.ios;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.ios.SampleAppSearchResultsScreen;
 import screens.ios.SampleAppSearchScreen;
+import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
