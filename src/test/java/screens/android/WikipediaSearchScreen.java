@@ -42,7 +42,8 @@ public class WikipediaSearchScreen {
         nameAccount.shouldHave(text("Log in to Wikipedia"));
         nameAccount.click();
     }
-    public static   void clickContinueButton() {
+
+    public static void clickContinueButton() {
         continueButton.click();
     }
 
