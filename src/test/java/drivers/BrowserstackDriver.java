@@ -2,8 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserstackAuthConfig;
-import config.LocalConfig;
-import lombok.Getter;
+import config.MobileConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -16,10 +15,8 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-
-    @Getter
     public static BrowserstackAuthConfig authConfig = ConfigFactory.create(BrowserstackAuthConfig.class, System.getProperties());
-    public static LocalConfig deviceConfig = ConfigFactory.create(LocalConfig.class, System.getProperties());
+    public static MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -30,20 +27,17 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("browserstack.user", authConfig.getUserName());
         caps.setCapability("browserstack.key", authConfig.getKey());
 
+        caps.setCapability("app", mobileConfig.getApp());
+        caps.setCapability("device", mobileConfig.getDevice());
+        caps.setCapability("os_version", mobileConfig.getOsVersion());
 
-        caps.setCapability("device", deviceConfig.getDeviceName());
-        caps.setCapability("os_version", deviceConfig.getPlatformVersion());
-        caps.setCapability("app", deviceConfig.getAppUrl());
-
-        caps.setCapability("project", "Wikipedia Mobile Tests Java Project");
-        caps.setCapability("build", "browserstack-build-1");
-        caps.setCapability("name", "wikipedia_tests");
-
-        caps.setCapability("fullReset", true);
+        caps.setCapability("project", authConfig.getProjectName());
+        caps.setCapability("build", authConfig.getBuildName());
+        caps.setCapability("name", "test " + mobileConfig.getDevice());
 
         try {
             return new RemoteWebDriver(
-                    new URL(authConfig.getRemoteWebDriverUrl()), caps);
+                    new URL(authConfig.getRemoteUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Attach {
+
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
@@ -29,6 +30,5 @@ public class Attach {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + Browserstack.videoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
-
     }
 }

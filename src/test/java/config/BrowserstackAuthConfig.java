@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${deviceHost}.properties"
+        "classpath:browserstack.properties"
 })
 
 public interface BrowserstackAuthConfig extends Config {
@@ -14,7 +14,13 @@ public interface BrowserstackAuthConfig extends Config {
     @Key("key")
     String getKey();
 
-    @Key("remoteWebDriverUrl")
+    @Key("remoteUrl")
     @DefaultValue("https://hub.browserstack.com/wd/hub")
-    String getRemoteWebDriverUrl();
+    String getRemoteUrl();
+
+    @Key("projectName")
+    String getProjectName();
+
+    @Key("buildName")
+    String getBuildName();
 }

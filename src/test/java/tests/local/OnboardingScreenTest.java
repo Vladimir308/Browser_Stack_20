@@ -8,12 +8,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static screens.android.WikipediaSearchScreen.*;
 
+@Tag("emulation")
 public class OnboardingScreenTest extends TestBase {
 
     @Test
-    @Tag("emulator")
     @DisplayName("Проверка стартовых страниц Wikipedia")
-    void onboardingScreenTest() {
+    public void onboardingScreenTest() {
         String firstText = "The Free Encyclopedia\n…in over 300 languages",
                 secondText = "New ways to explore",
                 thirdText = "Reading lists with sync",
@@ -40,7 +40,7 @@ public class OnboardingScreenTest extends TestBase {
         step("Проверяем заголовок четвертой страницы и переходим на следующую страницу", () -> {
             assertThat(textElement.getText())
                     .isEqualTo(fourthText);
-            clickContinueButton();
+            clickGetStartButton();
         });
 
         step("Проверяем, что открылась страница с поиском", () ->

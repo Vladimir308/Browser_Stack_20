@@ -1,21 +1,20 @@
 package helpers;
 
-import drivers.BrowserstackDriver;
-
+import static drivers.BrowserstackDriver.authConfig;
 import static io.restassured.RestAssured.given;
-import static java.lang.String.format;
 
-public class Browserstack extends BrowserstackDriver {
+public class Browserstack {
 
     public static String videoUrl(String sessionId) {
-        String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
+        String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
         return given()
                 .auth().basic(authConfig.getUserName(), authConfig.getKey())
-                .when()
                 .get(url)
+
                 .then()
-                .log().all()
+                .log().status()
+                .log().body()
                 .statusCode(200)
                 .extract().path("automation_session.video_url");
     }

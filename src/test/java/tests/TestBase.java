@@ -11,19 +11,24 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
-
-    public static final String deviceHost = System.getProperty("deviceHost");
+    public static String deviceHost = System.getProperty("env");
 
     @BeforeAll
     static void beforeAll() {
 
-        if (deviceHost.equals("browserstack")) {
-            Configuration.browser = BrowserstackDriver.class.getName();
-        } else {
-            Configuration.browser = LocalDriver.class.getName();
+        switch (deviceHost) {
+            case "android", "ios":
+                Configuration.browser = BrowserstackDriver.class.getName();
+                break;
+            case "emulation":
+                Configuration.browser = LocalDriver.class.getName();
+                break;
+            default:
+                Configuration.browser = LocalDriver.class.getName();
         }
 
         Configuration.browserSize = null;
@@ -32,24 +37,22 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
-        open();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open();
     }
 
     @AfterEach
     void addAttachments() {
         String sessionId = Selenide.sessionId().toString();
-
-        if (deviceHost.equals("emulator")) {
-            Attach.screenshotAs("Last screenshot");
-        }
-
+        Attach.screenshotAs("last screenshot");
         Attach.pageSource();
 
         closeWebDriver();
 
-        if (deviceHost.equals("browserstack")) {
-            Attach.addVideo(sessionId);
+        switch (deviceHost) {
+            case "android", "ios":
+                Attach.addVideo(sessionId);
+                break;
         }
     }
 }
