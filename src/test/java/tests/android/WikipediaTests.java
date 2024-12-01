@@ -11,27 +11,30 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("android")
 public class WikipediaTests extends TestBase {
+    WikipediaSearchScreen wikipediaSearchScreen = new WikipediaSearchScreen();
+    WikipediaSearchResultsScreen wikipediaSearchResultsScreen = new WikipediaSearchResultsScreen();
+
 
     @Test
     @DisplayName("Проверить успешные результаты поиска в приложении Wikipedia")
     public void successfulSearchTest() {
         String query = "Appium";
-        WikipediaSearchScreen.searchFor(query);
-        assertThat(WikipediaSearchResultsScreen.getResultsCount()).isGreaterThan(0);
+        wikipediaSearchScreen.searchFor(query);
+        assertThat(wikipediaSearchResultsScreen.getResultsCount()).isGreaterThan(0);
     }
 
     @Test
     @DisplayName("Проверить сообщение об ошибке при неудачном поиске в приложении Wikipedia")
     public void unsuccessfulSearchTest() {
         String query = "Java";
-        WikipediaSearchScreen.searchForUnsuccessful(query);
-        WikipediaSearchResultsScreen.ResultError();
+        wikipediaSearchScreen.searchForUnsuccessful(query);
+        wikipediaSearchResultsScreen.ResultError();
     }
 
     @Test
     @DisplayName("Проверка наличия регистрации в приложении Wikipedia")
     public void checkLogInButtonTest() {
-        WikipediaSearchScreen.loginButton();
-        WikipediaSearchResultsScreen.ResultLogin();
+        wikipediaSearchScreen.loginButton();
+        wikipediaSearchResultsScreen.ResultLogin();
     }
 }
