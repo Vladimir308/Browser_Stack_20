@@ -5,12 +5,9 @@ import screens.OnboardingScreen.Onboarding;
 import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 
 @Tag("emulation")
 public class OnboardingScreenTest extends TestBase {
-
     Onboarding onboarding = new Onboarding();
 
     @Test
@@ -42,7 +39,7 @@ public class OnboardingScreenTest extends TestBase {
         });
 
         step("Проверяем, что открылась страница с поиском", () -> {
-            assertTrue(onboarding.isSearchContainerEnabled());
+            onboarding.shouldBeVisible();
         });
     }
 }
