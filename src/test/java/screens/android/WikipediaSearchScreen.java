@@ -17,20 +17,20 @@ public class WikipediaSearchScreen {
             menuButton = $(id("org.wikipedia.alpha:id/menu_overflow_button")),
             nameAccount = $(id("org.wikipedia.alpha:id/explore_overflow_account_name"));
 
-    @Step("Выполнить поиск")
+    @Step("Выполнить поиск Appium")
     public void searchFor(String query) {
         searchCard.click();
         searchBar.sendKeys(query);
     }
 
-    @Step("Выполнить поиск")
+    @Step("Неуспешный поиск Java")
     public void searchForUnsuccessful(String query) {
         searchCard.click();
         searchBar.sendKeys(query);
         $$(id("org.wikipedia.alpha:id/page_list_item_container")).first().click();
     }
 
-    @Step("Выполнить поиск")
+    @Step("Проверка регистрации, видимость Login")
     public void loginButton() {
         menuButton.click();
         nameAccount.shouldHave(text("Log in to Wikipedia"));

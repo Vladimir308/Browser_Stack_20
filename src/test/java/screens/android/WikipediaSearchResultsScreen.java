@@ -15,19 +15,25 @@ public class WikipediaSearchResultsScreen {
     private final ElementsCollection foundItems = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
     private final SelenideElement errorText = $(id("org.wikipedia.alpha:id/view_wiki_error_text"));
     private final SelenideElement loginText = $(id("org.wikipedia.alpha:id/login_button"));
+    private final SelenideElement searchContainer = $(id("org.wikipedia.alpha:id/search_container"));
 
-    @Step("Успешный результат")
+    @Step("Успешный результат больше 0")
     public int getResultsCount() {
         return foundItems.size();
     }
 
-    @Step("Успешный результат")
+    @Step("Результат error text")
     public void ResultError() {
         errorText.shouldBe(visible);
     }
 
-    @Step("Успешный результат")
+    @Step("Успешный результат, видимость кнопки Login")
     public void ResultLogin() {
         loginText.shouldHave(text("Log in"));
+    }
+
+    @Step("Проверяем, что открылась страница с поиском")
+    public void shouldBeVisible() {
+        searchContainer.shouldBe(visible);
     }
 }
