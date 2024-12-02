@@ -22,28 +22,23 @@ public class OnboardingScreenTest extends TestBase {
             onboarding.verifyText(firstText);
             onboarding.clickContinue();
         });
-
         step("Проверяем заголовок второй страницы и переходим на следующую страницу", () -> {
             onboarding.verifyText(secondText);
             onboarding.clickContinue();
         });
-
         step("Проверяем заголовок третьей страницы и переходим на следующую страницу", () -> {
             onboarding.verifyText(thirdText);
             onboarding.clickContinue();
         });
-
         step("Проверяем заголовок четвертой страницы и переходим на следующую страницу", () -> {
             onboarding.verifyText(fourthText);
             onboarding.clickGetStart();
         });
-
         step("Проверяем, что открылась страница с поиском", () -> {
             onboarding.shouldBeVisible();
         });
     }
 }
-
 //
 //
 //    WikipediaSearchScreen wikipediaSearchScreen = new WikipediaSearchScreen();
