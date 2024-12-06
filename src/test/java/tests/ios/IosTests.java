@@ -1,8 +1,8 @@
 package tests.ios;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
 import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
@@ -15,6 +15,7 @@ import static io.qameta.allure.Allure.step;
 public class IosTests extends TestBase {
 
     @Test
+    @DisplayName("Успешный поиск Appium")
     public void searchTest() {
         String searchQuery = "Appium";
         step("Нажать на Text button", () -> {
@@ -29,6 +30,7 @@ public class IosTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Видимость заголовка")
     public void visibleMainPageTest() {
         step("Проверка главной страницы", () -> {
             $(name("Alert")).shouldBe(visible);
