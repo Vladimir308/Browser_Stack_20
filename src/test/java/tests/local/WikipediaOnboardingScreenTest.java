@@ -22,7 +22,7 @@ public class WikipediaOnboardingScreenTest extends TestBase {
         onboarding.verifyText(secondText);
         onboarding.clickContinue();
         onboarding.verifyText(thirdText);
-        onboarding.clickContinueButton();
+        onboarding.clickContinue();
         onboarding.verifyText(fourthText);
         onboarding.clickGetStart();
         onboardingResult.shouldBeVisible();
