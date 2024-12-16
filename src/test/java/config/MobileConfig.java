@@ -17,4 +17,19 @@ public interface MobileConfig extends Config {
 
     @Key("app")
     String getApp();
+
+    @Key("userName")
+    String getUserName();
+
+    @Key("key")
+    String getKey();
+
+    @Key("remoteUrl")
+    String getRemoteUrl();
+
+    @Key("projectName")
+    String getProjectName();
+
+    @Key("buildName")
+    String getBuildName();
 }
