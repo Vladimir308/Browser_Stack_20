@@ -35,8 +35,9 @@ public class WikipediaOnboardingScreenTest extends TestBase {
         onboardingResult.shouldBeVisible();
     }
 
+    @DisplayName("Проверка поиска Wikipedia")
     @ParameterizedTest(name = "Search term: {0}")
-    @ValueSource(strings = {"White Rabbit", "Venus"})
+    @ValueSource(strings = {"Aloe vera", "Burger King"})
     void searchTest(String searchTerm) {
         welcomePage.skipButtonClick();
         mainPage.searchClick();

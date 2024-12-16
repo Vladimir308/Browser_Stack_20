@@ -12,7 +12,7 @@ public class ArticlePage {
     private final ElementsCollection
             contentArticle = $$(AppiumBy.className("android.view.View"));
 
-    @Step
+    @Step("Виден текст на наш запрос")
     public ArticlePage findText(String value) {
         contentArticle.findBy(text(value));
         return this;
