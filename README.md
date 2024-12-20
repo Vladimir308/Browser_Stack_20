@@ -84,13 +84,13 @@ clean ${TASK}
 ```
 ___
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/C23-MariaStel-jenkins-unit17/8/allure/)</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Browser_Stack_20/44/allure/)</a>
 ___
 
-### *Основная страница отчёта*
+### *Основная страница отчёта Android*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/allure-overview.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/Allure Android.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
@@ -102,9 +102,7 @@ ___
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure-graphs-1.png" width="850">
-
-<img title="Allure Graphics" src="images/screen/allure-graps-2.png" width="850">  
+<img title="Allure Graphics" src="images/screen/Allure Android Graphics.png" width="850">
 </p>
 
 ___
