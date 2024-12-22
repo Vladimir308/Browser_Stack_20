@@ -45,7 +45,6 @@ ____
 - Удаленный запуск с выбором параметров для тестов реализован при помощи :  [Jenkins](https://www.jenkins.io/)
 - Отчеты о пройденных тестах формируются при помощи : [Allure](https://github.com/allure-framework)
 - Реализована интеграция  с [Allure TestOps](https://qameta.io/)
-- Реализована интеграция с [Jira Software](https://www.atlassian.com/software/jira)
 - Тесты мобильного приложения проходят на сервисе [BrowserStack](https://www.browserstack.com)
 
 ____
@@ -67,7 +66,7 @@ ____
 
 ### **Параметры сборки в Jenkins:**
 
-- *task (выбор группы тестов для запуска, по умолчанию: search)*
+- *task (выбор группы тестов для запуска, по умолчанию: Test)*
 
 <a id="console"></a>
 ## Команды для запуска из терминала
@@ -93,40 +92,50 @@ ___
 <img title="Allure Overview Dashboard" src="images/screen/Allure Android.png" width="850">  
 </p>  
 
-### *Тест-кейсы*
-
-<p align="center">  
-<img title="Allure Tests" src="images/screen/allure-test-cases.png" width="850">  
-</p>
-
-### *Графики*
+### *Графики Android*
 
   <p align="center">  
 <img title="Allure Graphics" src="images/screen/Allure Android Graphics.png" width="850">
+</p>
+
+### *Основная страница отчёта Ios*
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screen/Allure Ios.png" width="850">  
+</p>  
+
+### *Графики Ios*
+
+  <p align="center">  
+<img title="Allure Graphics" src="images/screen/Allure Ios Graphics.png" width="850">
 </p>
 
 ___
 <a id="allure-testops"></a>
 ## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4065/dashboards">Allure TestOps</a>
 ____
-### *Allure TestOps Dashboard*
+### *Allure TestOps Dashboard Android*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/testops-dashboard.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/Testops Android.png" width="850">  
 </p>
 
-### *Авто тест-кейсы*
+### *Авто тест-кейсы Android*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/testops-test-cases.png" width="850">  
+<img title="Allure TestOps Tests" src="images/screen/Testops Android2.png" width="850">  
 </p>
 
-___
-<a id="jira"></a>
-## <img alt="Jira" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1116">Jira</a>
-____
+### *Allure TestOps Dashboard Ios*
+
 <p align="center">  
-<img title="Jira" src="images/screen/jira.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/Testops ios.png" width="850">  
+</p>
+
+### *Авто тест-кейсы Ios*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="images/screen/Testops Ios (2).png" width="850">  
 </p>
 
 ____
