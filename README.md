@@ -64,23 +64,38 @@ ____
 </p>
 
 
-### **Параметры сборки в Jenkins:**
-
-- *task (выбор группы тестов для запуска, по умолчанию: Test)*
-
-<a id="console"></a>
 ## Команды для запуска из терминала
 ___
-***Локальный запуск:***
+***Локальный запуск через BrowserStack:***
+
 ```bash  
-android_test -Denv=android
-ios_test -Denv=ios
+gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpassword=ПАРОЛЬ
+```
+Чтобы получить логин и пароль, можно зарегистрироваться на [BrowserStack](https://www.browserstack.com/) (или запустите тесты через Jenkins)
+
+
+***Локальный запуск через эмулятор:***
+
+```bash  
+gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ_ПЛАТФОРМЫ
+```
+По умолчанию:
+- deviceName=Pixel 3 API 29
+- platformVersion=10.0
+
+Перед запуском тестов необходимо установить и настроить сервер Appium и Uiautomator2. 
+После этого запустите сервер Appium с помощью команды:
+
+```bash  
+appium server --base-path /wd/hub
 ```
 
-***Удалённый запуск через Jenkins:***
+
+***Удалённый запуск через Jenkins (только BrowserStack):***
 ```bash  
-clean ${TASK}
+clean browserstack -DdeviceHost=browserstack
 ```
+
 ___
 <a id="allure"></a>
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Browser_Stack_20/44/allure/)</a>
@@ -139,9 +154,25 @@ ____
 </p>
 
 ____
+<a id="telegram"></a>
+## <img alt="Telegram" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+____
+<p align="center">  
+<img title="Telegram Notification" src="images/screen/telegram.png" width="550">  
+</p>
+
+____
 <a id="video"></a>
-## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+## <img alt="BrowserStack" height="25" src="images/logo/Browserstack.svg" width="20"/></a> Примеры видео выполнения тестов на BrowserStack
 ____
 <p align="center">
-<img title="Selenoid Video" src="images/video/video-89ee6b732d5d4c7ea09a559071b964832240f5de.gif" width="350" height="650"  alt="video">   
+<img title="BrowserStack Video" src="images/video/browserstack_video.gif" width="200" alt="video">   
+</p>
+
+____
+<a id="video"></a>
+## Пример видео выполнения тестов локально через эмулятор
+____
+<p align="center">
+<img title="Emulator Video" src="images/video/emulator_video.gif" width="200" alt="video">   
 </p>
