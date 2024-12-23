@@ -132,25 +132,25 @@ ____
 ### *Allure TestOps Dashboard Android*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/Testops Android.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/TestOpsAndroid2.png" width="850">  
 </p>
 
 ### *Авто тест-кейсы Android*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/Testops Android2.png" width="850">  
+<img title="Allure TestOps Tests" src="images/screen/TestOpsAndroid.png" width="850">  
 </p>
 
 ### *Allure TestOps Dashboard Ios*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/Testops ios.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/TestOpsIos2.png" width="850">  
 </p>
 
 ### *Авто тест-кейсы Ios*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/Testops Ios (2).png" width="850">  
+<img title="Allure TestOps Tests" src="images/screen/TestOpsIos.png" width="850">  
 </p>
 
 ____
@@ -158,7 +158,7 @@ ____
 ## <img alt="Telegram" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 ____
 <p align="center">  
-<img title="Telegram Notification" src="images/screen/telegram.png" width="550">  
+<img title="Telegram Notification" src="images/screen/Telegramm.png" width="550">  
 </p>
 
 ____
