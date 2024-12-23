@@ -166,7 +166,7 @@ ____
 ## Пример видео выполнения тестов удалённо на Android
 ____
 <p align="center">
-<img title="Ios Video" src="images/video/Android.gif" width="200" alt="video">   
+<img title="Ios Video" src="images/video/Android.gif" width="600" alt="video">   
 </p>
 
 ____
