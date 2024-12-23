@@ -163,7 +163,7 @@ ____
 
 ____
 <a id="video"></a>
-## <img alt="BrowserStack" height="25" src="images/logo/Browserstack.svg" width="20"/></a> Примеры видео выполнения тестов на BrowserStack
+##  Примеры видео выполнения тестов на BrowserStack
 ____
 <p align="center">
 <img title="BrowserStack Video" src="images/video/Android.gif" width="200" alt="video">   
@@ -180,5 +180,5 @@ ____
 ## Пример видео выполнения тестов удалённо на Ios
 ____
 <p align="center">
-<img title="Emulator Video" src="images/video/Ios.gif" width="200" alt="video">   
+<img title="Ios Video" src="images/video/Ios.gif" width="200" alt="video">   
 </p>
