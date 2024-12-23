@@ -163,10 +163,10 @@ ____
 
 ____
 <a id="video"></a>
-##  Примеры видео выполнения тестов на BrowserStack
+## Пример видео выполнения тестов удалённо на Android
 ____
 <p align="center">
-<img title="BrowserStack Video" src="images/video/Android.gif" width="200" alt="video">   
+<img title="Ios Video" src="images/video/Android.gif" width="200" alt="video">   
 </p>
 
 ____
