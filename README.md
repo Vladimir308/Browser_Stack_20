@@ -177,7 +177,7 @@ ____
 <img title="Emulator Video" src="images/video/Emulator.gif" width="200" alt="video">   
 </p>
 
-## Пример видео выполнения тестов локально на Ios
+## Пример видео выполнения тестов удалённо на Ios
 ____
 <p align="center">
 <img title="Emulator Video" src="images/video/Ios.gif" width="200" alt="video">   
