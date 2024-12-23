@@ -166,7 +166,7 @@ ____
 ## <img alt="BrowserStack" height="25" src="images/logo/Browserstack.svg" width="20"/></a> Примеры видео выполнения тестов на BrowserStack
 ____
 <p align="center">
-<img title="BrowserStack Video" src="images/video/browserstack_video.gif" width="200" alt="video">   
+<img title="BrowserStack Video" src="images/video/Android.gif" width="200" alt="video">   
 </p>
 
 ____
@@ -174,5 +174,11 @@ ____
 ## Пример видео выполнения тестов локально через эмулятор
 ____
 <p align="center">
-<img title="Emulator Video" src="images/video/emulator_video.gif" width="200" alt="video">   
+<img title="Emulator Video" src="images/video/Emulator.gif" width="200" alt="video">   
+</p>
+
+## Пример видео выполнения тестов локально на Ios
+____
+<p align="center">
+<img title="Emulator Video" src="images/video/Ios.gif" width="200" alt="video">   
 </p>
