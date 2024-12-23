@@ -104,25 +104,25 @@ ___
 ### *Основная страница отчёта Android*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/Allure Android.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/AllureAndroid.png" width="850">  
 </p>  
 
 ### *Графики Android*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/Allure Android Graphics.png" width="850">
+<img title="Allure Graphics" src="images/screen/AllureAndroidGraphics.png" width="850">
 </p>
 
 ### *Основная страница отчёта Ios*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/Allure Ios.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/AllureIos.png" width="850">  
 </p>  
 
 ### *Графики Ios*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/Allure Ios Graphics.png" width="850">
+<img title="Allure Graphics" src="images/screen/AllureIosGraphics.png" width="850">
 </p>
 
 ___
