@@ -132,25 +132,25 @@ ____
 ### *Allure TestOps Dashboard Android*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/Testops Android.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/TestopsAndroid.png" width="850">  
 </p>
 
 ### *Авто тест-кейсы Android*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/Testops Android2.png" width="850">  
+<img title="Allure TestOps Tests" src="images/screen/TestopsAndroid2.png" width="850">  
 </p>
 
 ### *Allure TestOps Dashboard Ios*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/Testops ios.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/TestopsIos.png" width="850">  
 </p>
 
 ### *Авто тест-кейсы Ios*
 
 <p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/Testops Ios (2).png" width="850">  
+<img title="Allure TestOps Tests" src="images/screen/TestopsIos2.png" width="850">  
 </p>
 
 ____
