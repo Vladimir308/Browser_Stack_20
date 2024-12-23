@@ -17,8 +17,6 @@ ____
 
 * <a href="#allure-testops">Интеграция с Allure TestOps</a>
 
-* <a href="#jira">Интеграция с Jira</a>
-
 * <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
 ____
 <a id="tools"></a>
@@ -65,19 +63,11 @@ ____
 
 
 ## Команды для запуска из терминала
-___
-***Локальный запуск через BrowserStack:***
-
-```bash  
-gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpassword=ПАРОЛЬ
-```
-Чтобы получить логин и пароль, можно зарегистрироваться на [BrowserStack](https://www.browserstack.com/) (или запустите тесты через Jenkins)
-
 
 ***Локальный запуск через эмулятор:***
 
 ```bash  
-gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ_ПЛАТФОРМЫ
+gradle clean emulation -Denv=emulation
 ```
 По умолчанию:
 - deviceName=Pixel 3 API 29
@@ -93,7 +83,8 @@ appium server --base-path /wd/hub
 
 ***Удалённый запуск через Jenkins (только BrowserStack):***
 ```bash  
-clean browserstack -DdeviceHost=browserstack
+gradle clean android -Denv=android
+gradle clean ios -Denv=ios
 ```
 
 ___
